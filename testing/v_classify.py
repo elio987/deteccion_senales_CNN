@@ -6,22 +6,24 @@ from imutils import paths
 import os
 
 #Declaramos el path de de nuestro proyecto
-mainPath = "/home/nancy/github/pokenet-base"
+mainPath = "/home/elio987/Documents/deteccion_senales_CNN"
 #path del modelo a analizar
-modelPath = os.path.join(mainPath, "output")
+modelPath = os.path.join(mainPath, "modelos")
+#path de los videos a analizar
+videoPath = os.path.join(mainPath, "videos_resultantes")
 #Tamano de la imagen necesaria
 imageSize = (64, 64)
 #Diccionario de las clases de la DATASET
-classDictionary = {0: "stop", 1: "fin_prob", 2: "derecho", 3: "izquierda", 4: "siga", 5: "rotonda"}
+classDictionary = {0: "stop", 1: "fin_prob", 2: "derecha", 3: "izquierda", 4: "siga", 5: "rotonda"}
 #Diccionario de las probabilidades obtenidas
-classPercentage = {"stop":0,"fin_prob":0, "derecho":0, "izquierda":0,"siga":0,"rotonda":0}
+classPercentage = {"stop":0,"fin_prob":0, "derecha":0, "izquierda":0,"siga":0,"rotonda":0}
 #Cargamos el modelo
 model = load_model(os.path.join(modelPath, "signals_5_student.model"))
 #Frames totales
 frames_totales = 0
 
 # Escribir el nombre del video que se quiere probar
-vid = cv2.VideoCapture("rotonda.webm")
+vid = cv2.VideoCapture(os.path.join(videoPath, "izq.webm"))
 
 while (vid.isOpened()):
     #Leemos la camara

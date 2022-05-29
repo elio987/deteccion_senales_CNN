@@ -6,9 +6,11 @@ from imutils import paths
 import os
 
 #Declaramos el path de de nuestro proyecto
-mainPath = "/home/nancy/github/pokenet-base"
+mainPath = "/home/elio987/Documents/deteccion_senales_CNN"
 #path del modelo a analizar
-modelPath = os.path.join(mainPath, "output")
+modelPath = os.path.join(mainPath, "modelos")
+#path de los videos a analizar
+videoPath = os.path.join(mainPath, "videos_resultantes")
 #Tamano de la imagen necesaria
 imageSize = (64, 64)
 #Diccionario de las clases de la DATASET
@@ -39,7 +41,7 @@ model = load_model(os.path.join(modelPath, "signals_43_student.model"))
 frames_totales = 0
 
 # Escribir el nombre del video que se quiere probar
-vid = cv2.VideoCapture("stop.webm")
+vid = cv2.VideoCapture(os.path.join(videoPath, "siga.webm"))
 
 while (vid.isOpened()):
     #Leemos la camara
@@ -68,7 +70,6 @@ while (vid.isOpened()):
     #Sumamos los frames detectados de cada clase
     classPercentage[label] = classPercentage[label]+1
     label = label + " " + prob
-    print(classIndex)
     "Contamo todos los frames"
     frames_totales +=1
     textColor = (155, 5, 170)
