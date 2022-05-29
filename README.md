@@ -10,6 +10,7 @@ https://drive.google.com/drive/folders/1fA9DtcOlEPpT_WcOAAgDyHBUZyQvRG0R?usp=sha
 - Enlace a la DATASET original:
 https://benchmark.ini.rub.de/gtsrb_news.html
 - En una carpeta llamda training va a estar el notebook para poder entrenar el modelo.
-- En la carpeta llamada testing va a estar el notebook para poder detectar las imagenes con la webcam de su computadora.
+- En la carpeta llamada testing va a estar el archivo de python para poder detectar las imagenes con la webcam de su computadora.
+- También en la carpeta d testing va a estar el codigo para poder validad la calidad de la deteccion de imagenes.
 - En este ejemplo de uso para entrenar el modelo tensorflow-gpu==2.4.0
 Al correr el testing se va a abrir tu camara con cv2 y mostrara en la imagen un texto diciendo que señal pertenece cada frame.
