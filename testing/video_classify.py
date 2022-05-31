@@ -41,7 +41,7 @@ model = load_model(os.path.join(modelPath, "signals_43_student.model"))
 frames_totales = 0
 
 # Escribir el nombre del video que se quiere probar
-vid = cv2.VideoCapture(os.path.join(videoPath, "siga.webm"))
+vid = cv2.VideoCapture(os.path.join(videoPath, "stop.webm"))
 
 while (vid.isOpened()):
     #Leemos la camara
